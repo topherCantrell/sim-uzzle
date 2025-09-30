@@ -42,3 +42,6 @@ Level 1:
 26:PBP,__O,PPP,OOG
 27:ROR,PPG,G__,POO
 28:GPO,P_O,P_G,ROR
+
+Level 2:
+29:
