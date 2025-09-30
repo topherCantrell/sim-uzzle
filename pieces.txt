@@ -1,0 +1,44 @@
+B = Blue
+O = Orange
+G = Green
+P = Purple
+R = Red
+
+Starting piece with number correctly oriented then rolling clockwise
+1:OB,GP,RR,GO:1
+2:PP,OB,RO,BG:2
+3:PB,OR,GG,RP:3
+4:OP,GR,PG,BB:4
+5:BR,OO,RP,GB:5
+
+Game board is always 3x4 with 2 blank squares
+
+Level 1:
+1:ROG,O_P,B_O,GPO
+2:ROG,O_P,B_B,GPR
+3:GG_,OO_,RRB,PPB
+4:BOB,__R,OBB,RGG
+5:BOB,__R,GBB,BGG
+6:RRB,__R,GBB,BGG
+7:RGO,P__,RBR,GOP
+8:POG,R__,GBR,PGB
+9:BOG,P__,GBG,PRB
+10:RRG,__G,GBG,PRB
+11:RRB,__P,PBG,ORB
+12:GPO,G_R,P_P,PBO
+13:RGO,O_O,R_G,BGP
+14:GOB,__P,PBG,ORB
+15:GPO,G_R,P_P,PBO
+16:RGO,O_O,R_G,BGP
+17:GOB,__P,PBG,ORB
+18:GGR,P_R,P_B,OOB
+19:GGR,O_R,O_B,PPB
+20:RRB,P_B,P_G,OOG
+21:BPP,BOO,__O,RPG
+22:PBP,GBO,__R,GBR
+23:ROR,PPO,O__,GOO
+24:PRP,ORO,__O,GBG
+25:BPP,ORO,__O,GBG
+26:PBP,__O,PPP,OOG
+27:ROR,PPG,G__,POO
+28:GPO,P_O,P_G,ROR
