@@ -55,20 +55,16 @@ def all_unique_pieces():
         if ret not in seen:
             seen.add(ret)
             yield ret          
-            
+
+def report_all_unique_pieces():
+    cp = 0
+    for _ in all_unique_pieces_long_way():    
+        cp += 1
+    print('Using the "long way:',cp)
+    cp = 0
+    for _ in all_unique_pieces():    
+        cp += 1
+    print('Using the domino sides:', cp)            
      
-
-# cp = 0
-# for s in all_possible_pieces_sides():
-#     cp += 1
-# print(cp)
-
-cp = 0
-for p in all_unique_pieces_long_way():    
-    cp += 1
-print(cp)
-    
-cp = 0
-for p in all_unique_pieces():    
-    cp += 1
-print(cp)
+if __name__ == '__main__':
+    report_all_unique_pieces()
