@@ -54,4 +54,6 @@ The order of the sides on a piece does not matter. Piece "NLAG" is equivalent to
 All of these pieces provide the same set of four sides for the player to use. The easiest way to compare pieces is
 to sort each piece into alphabetical order of sides. All three pieces above become "AGLN" -- the same set of sides.
 
+Accounting for equivalent pieces using [pieces.py#L59](pieces.py#L59) we are left with 3060 unique pieces.
+
 
