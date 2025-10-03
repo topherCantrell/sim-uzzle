@@ -58,7 +58,7 @@ I model each piece as a string of four letters (four sides). From the picture ab
 
 Why these 5 pieces from the pool of 3060?
 
-I see that all these pieces have 1 or 2 of each possible picture -- no more and no less. That
-makes sense. We want the pieces to be as diverse for a variety of card patterns.
+I see that all the chosen pieces have 1 or 2 of each possible picture -- no more and no less. 
+That makes sense. We want the pieces to be as diverse for a variety of card patterns.
 
 TODO program this
