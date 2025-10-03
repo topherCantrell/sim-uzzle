@@ -2,8 +2,7 @@
 
 [The Uzzle Game](https://www.amazon.com/Uzzle-Popular-Suitable-Children-Pattern/dp/B0BFP4VZCP)
 
-![](art/uzzle.jpg)
-![](art/uzzleplay.jpg)
+![](art/uzzle.jpg) ![](art/uzzleplay.jpg)
 
 # Glyphs
 
