@@ -1,15 +1,4 @@
-B = Blue
-O = Orange
-G = Green
-P = Purple
-R = Red
 
-Starting piece with number correctly oriented then rolling clockwise
-1:OB,GP,RR,GO:1
-2:PP,OB,RO,BG:2
-3:PB,OR,GG,RP:3
-4:OP,GR,PG,BB:4
-5:BR,OO,RP,GB:5
 
 Game board is always 3x4 with 2 blank squares
 
