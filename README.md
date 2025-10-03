@@ -6,32 +6,52 @@
 
 # Glyphs
 
+There are five pictures (glyphs) in the game. I will model individual glyphs as lowercase letters that
+match the glyphs' background (red, purple, green, blue, and orange). These pictures are symmetrical --
+the same in any rotation.
+
 ![](art/glyphs.jpg)
+
+# Like Dominoes
+
+Each player starts the game with the same five game pieces. A single piece is a long box with the piece's number
+printed on both ends. Each piece is a set of four sides. Each side is two glyphs.
+
+The player must organize the five pieces so that the top sides form the pattern shown on the selected card. The pieces
+are turned to choose a side. The pieces are rotated and moved to build the picture. The first player to build the
+selected pattern wins the round.
+
+The two-glyph sides are like dominoes with pictures instead of dots. Five pictures would be 0-4 -- a double-4 domino
+set. There are 15 unique dominoes as shown below.
+
+![](art/dominos.jpg)
 
 # Pieces
 
-Each player gets these five pieces:
+The end cap of each piece shows the piece number. The picture below was made by starting each piece with the end cap number oriented correctly for reading. That
+is the first picture in each group. The next picture in each group is the piece rotated counterclockwise, and so on for all four sides.
 
 ![](art/pieces.jpg)
 
-The end cap of each piece shows the piece number. The above picture was made by starting each piece with the end cap number oriented correctly for reading. That
-is the first picture in each group. The next picture in each group is the piece rotated counter clockwise, and so on for all four sides.
-
-There are five distinct pictures. The pictures are modeled by the first letter
-of their background color. Thus: P=Purple, B=Blue, O=Orange, G=Green, and R=Red.
-
-The model for a piece in this code is a single string of 8 letters from the picture
-above.
+Each piece is a collection of four sides from the possible 15 sides shown above. I model a piece as a string of four letters
+(four sides):
 
 ```
-1: BO OG RR PG -- "BOOGRRPG"
-2: PP GB OR BO -- "PPGBORBO"
-3: PB OR GG RP -- "PBORGGRP"
-4: OP GR PG BB -- "OPGRPGBB"
-5: BR OO RP GB -- "BROORPGB"
+1: bo og rr pg -- "NLAG"
+2: pp gb or bo -- "FKEN"
+3: pb or gg rp -- "HEJB"
+4: op gr pg bb -- "ICGM"
+5: br oo rp gb -- "DOBK"
 ```
 
-We can think of the faces of the pieces as dominos. Five pictures would be 0 to 4 pips (double 4), which has 15 unique dominos
-as shown:
+Each piece is a collection of 8 cells. Each cell is one of 5 pictures. Think of a piece as an 8-digit base-5 number.
+5 raised to the 8th power = 390,625 possible pieces.
 
-![](art/dominos.jpg)
+If we account for rotations (like dominoes), then each piece is a 4-digit base-15 number. That's 4 sides where each
+side is one of the 15 values above. 15 raised to the 4th power = 50,625 unique pieces.
+
+The order of the sides on a piece does not matter. Piece "NLAG" is equivalent to "GALN", which is equivalent to "NAGL".
+All of these pieces provide the same set of four sides for the player to use. The easiest way to compare pieces is
+to sort each piece into alphabetical order of sides. All three pieces above become "AGLN" -- the same set of sides.
+
+
