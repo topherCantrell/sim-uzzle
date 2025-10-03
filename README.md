@@ -39,7 +39,7 @@ But the order of the sides on a piece does not matter. Piece "NLAG" is equivalen
 All of these pieces provide the same set of four sides for the player to use. The easiest way to compare pieces is to sort 
 each piece into alphabetical order of sides. All three pieces above become "AGLN" -- the same set of sides.
 
-Accounting for equivalent pieces using [pieces.py#L59](pieces.py#L59) we are left with 3060 unique pieces.
+Accounting for equivalent pieces using [report_all_unique_pieces](pieces.py#L76) we are left with 3060 unique pieces.
 
 These are the pieces chosen by the Uzzle game team. The picture below was made by starting each piece with the end cap number 
 oriented correctly for reading. That is the first picture in each group. The next picture in each group is the piece rotated counterclockwise, and so on for all four sides.
@@ -61,4 +61,6 @@ Why these 5 pieces from the pool of 3060?
 I see that all the chosen pieces have 1 or 2 of each possible picture -- no more and no less. 
 That makes sense; the pieces should be diverse for a variety of card patterns.
 
-TODO program this
+I see that all the chosen pieces have exactly 1 "double".
+
+Accounting for these diversity rules with [report_all_allowed_pieces](pieces.py#L86) leaves us with 90 pieces.
