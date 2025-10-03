@@ -28,13 +28,25 @@ set. There are 15 unique dominoes as shown below.
 
 # Pieces
 
-The end cap of each piece shows the piece number. The picture below was made by starting each piece with the end cap number oriented correctly for reading. That
-is the first picture in each group. The next picture in each group is the piece rotated counterclockwise, and so on for all four sides.
+Each piece is a box of 8 cells. The end caps of each piece shows the piece's number. Each cell is one of 5 pictures. 
+Think of a piece as an 8-digit base-5 number. 5 raised to the 8th power = 390,625 possible pieces.
+
+One side of a piece is a pair of pictures like dominos (discussion above). If we account for rotations (like dominoes), 
+then each piece is a 4-digit base-15 number. That's 4 sides where each side is one of the 15 values above. 15 raised 
+to the 4th power = 50,625 unique pieces.
+
+But the order of the sides on a piece does not matter. Piece "NLAG" is equivalent to "GALN", which is equivalent to "NAGL".
+All of these pieces provide the same set of four sides for the player to use. The easiest way to compare pieces is to sort 
+each piece into alphabetical order of sides. All three pieces above become "AGLN" -- the same set of sides.
+
+Accounting for equivalent pieces using [pieces.py#L59](pieces.py#L59) we are left with 3060 unique pieces.
+
+These are the pieces chosen by the Uzzle game team. The picture below was made by starting each piece with the end cap number 
+oriented correctly for reading. That is the first picture in each group. The next picture in each group is the piece rotated counterclockwise, and so on for all four sides.
 
 ![](art/pieces.jpg)
 
-Each piece is a collection of four sides from the possible 15 sides shown above. I model a piece as a string of four letters
-(four sides):
+I model each piece as a string of four letters (four sides). From the picture above:
 
 ```
 1: bo og rr pg -- "NLAG"
@@ -44,16 +56,9 @@ Each piece is a collection of four sides from the possible 15 sides shown above.
 5: br oo rp gb -- "DOBK"
 ```
 
-Each piece is a collection of 8 cells. Each cell is one of 5 pictures. Think of a piece as an 8-digit base-5 number.
-5 raised to the 8th power = 390,625 possible pieces.
+Why these 5 pieces from the pool of 3060?
 
-If we account for rotations (like dominoes), then each piece is a 4-digit base-15 number. That's 4 sides where each
-side is one of the 15 values above. 15 raised to the 4th power = 50,625 unique pieces.
+I see that all these pieces have 1 or 2 of each possible picture -- no more and no less. That
+makes sense. We want the pieces to be as diverse for a variety of card patterns.
 
-The order of the sides on a piece does not matter. Piece "NLAG" is equivalent to "GALN", which is equivalent to "NAGL".
-All of these pieces provide the same set of four sides for the player to use. The easiest way to compare pieces is
-to sort each piece into alphabetical order of sides. All three pieces above become "AGLN" -- the same set of sides.
-
-Accounting for equivalent pieces using [pieces.py#L59](pieces.py#L59) we are left with 3060 unique pieces.
-
-
+TODO program this
