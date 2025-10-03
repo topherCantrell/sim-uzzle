@@ -2,6 +2,10 @@
 
 TODO: link
 
+# Glyphs
+
+![](art/glyphs.jpg)
+
 # Pieces
 
 Each player gets these five pieces:
