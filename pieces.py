@@ -1,3 +1,5 @@
+import itertools
+import json
 
 GLYPHS = 'rpgbo'
 SIDES = 'ABCDEFGHIJKLMNO'
@@ -103,6 +105,62 @@ def get_allowed_pieces():
         if all(1 <= counts[g] <= 2 for g in GLYPHS) and doubles == 1:
             yield p
 
+def get_all_sets_allowed_pieces(eight_glyphs=True):
+    seen = set() # Not needed, but just in case
+    for combination in itertools.combinations(get_allowed_pieces(), 5):
+        counts = {'r':0, 'p':0, 'g':0, 'b':0, 'o':0}
+        scounts = {'A':0, 'B':0, 'C':0, 'D':0, 'E':0, 'F':0, 'G':0, 'H':0, 'I':0, 'J':0, 'K':0, 'L':0, 'M':0, 'N':0, 'O':0}
+        for p in combination:
+            for s in p:
+                g1, g2 = SIDE_DEFINITION[s]
+                counts[g1] += 1
+                counts[g2] += 1
+                scounts[s] += 1
+        if eight_glyphs:
+            if counts['r'] != 8 or counts['p'] != 8 or counts['g'] != 8 or counts['b'] != 8 or counts['o'] != 8:
+                continue
+        bad = False
+        for c in scounts.values():
+            if c ==0 or c > 2:
+                bad = True
+                break
+        if bad:
+            continue
+
+        sc = sorted(combination)
+        if sc != list(combination):
+            raise Exception("OOPS")
+        ret = sc[0] + ' ' + sc[1] + ' ' + sc[2] + ' ' + sc[3] + ' ' + sc[4]
+        
+        if ret in seen:
+            raise Exception("OOPS2")
+        
+        yield ret
+
+def report_all_allowed_sets():
+    cp = 0
+    for p in get_all_sets_allowed_pieces(eight_glyphs=False):    
+        cp += 1        
+    print('Allowed sets:', cp)
+
+def report_all_allowed_sets_eight_glyphs():
+    sets_of_pieces = []
+    cp = 0
+    for p in get_all_sets_allowed_pieces(eight_glyphs=True):
+        sets_of_pieces.append(p)
+        cp += 1
+    print('Allowed sets (eight glyphs):', cp)
+
+def write_allowed_sets():
+    sets_of_pieces = []
+    for p in get_all_sets_allowed_pieces(eight_glyphs=True):
+        sets_of_pieces.append(p)        
+    with open('allowed_sets.json', 'w') as f:
+        f.write(json.dumps(sets_of_pieces, indent=2))
+
 if __name__ == '__main__':
     # report_all_unique_pieces()
-    report_all_allowed_pieces()
+    # report_all_allowed_pieces()
+    # report_all_allowed_sets()
+    # report_all_allowed_sets_eight_glyphs()
+    write_allowed_sets()
